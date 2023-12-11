@@ -5,7 +5,8 @@ import HistoryPage from "./pages/HistoryPage";
 import HomePage from "./pages/HomePage";
 import SpaceZoomPage from "./pages/SpaceZoomPage";
 import TestPage from "./pages/TestPage";
-
+import ClientPage2 from "./pages/ClientPage2";
+import ClientPage3 from "./pages/ClientPage3";
 // import HeaderBar from "./components/HeaderBar";
 
 function App() {
@@ -17,6 +18,8 @@ function App() {
         <Route path="/clientpage/spacezoompage/:floor/:section" element={<SpaceZoomPage />} />
         <Route path="/guardpage" element={<GuardPage />} />
         <Route path="/guardpage/historypage" element={<HistoryPage />} />
+        <Route path="/clientpage/clientpage2" element={<ClientPage2 />} />
+        <Route path="/clientpage/clientpage3" element={<ClientPage3 />} />
         <Route path="/testpage" element={<TestPage />} />
       </Routes>
     </>

@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom'; // Import Link for navigation
 import HeaderBar from "@/components/HeaderBar";
 import NewInput from "@/components/NewInput";
 
-export default function ClientPage() {
+export default function ClientPage3() {
+  // 创建一个数组，包含六个数字（可以是任意数字，这里用索引 i 作为 key）
   const gridItems = Array.from({ length: 6 }, (_, i) => i);
 
   // 可改成其他顏色變換，此為暫時
@@ -23,12 +24,12 @@ export default function ClientPage() {
   return (
     <>
       <HeaderBar />
-      <div>ClientPage</div>
+      <div>ClientPage2</div>
       <div className="mx-auto border rounded-lg w-2/3" onClick={handleViewClick} style={{ position: 'relative', cursor: 'pointer' }}>
         <NewInput
           placeholder="請輸入密碼"
         />
-            <div
+        <div
           style={{
             position: 'absolute',
             top: '150%',
@@ -46,13 +47,12 @@ export default function ClientPage() {
         <img
           src="/ColorBar.png"
           alt="color"
-          style={{ position: 'absolute', top: '150%', left: '50%', transform: 'translate(-50%, -50%)', width: '30%', height: '30%' }}
+          style={{ position: 'absolute', top: '150%', left: '50%', transform: 'translate(-50%, -50%)', width: '40%', height: '40%' }}
         />
-        {/* Clickable area for viewing */}
-        <div style={{ position: 'absolute', top: '50%', left: '0', transform: 'translate(0, -50%)', width: '25%', height: '25%' }}></div>
       </div>
 
-      <div style={{  display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '0px', marginTop: '100px' }}>
+      {/* Grid items */}
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '0px', marginTop: '100px' }}>
         {gridItems.map((item, index) => (
           <div key={item} style={{ position: 'relative', width: '100%', height: '0', paddingBottom: '100%', border: '15px dashed white', textAlign: 'center', lineHeight: '50px', backgroundColor: getColor(item) }}>
             {index === 0 && (
@@ -114,10 +114,11 @@ export default function ClientPage() {
           </div>
         ))}
       </div>
-       {/* Button to switch to ClientPage2 */}
-       <Link to="/clientpage/clientpage2">  
+
+         {/* Button to switch to ClientPage2 */}
+      <Link to="/clientpage">  
         <button className="my-10  bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-          切換到ClientPage2
+          切換到ClientPage
         </button>
       </Link>
 
@@ -126,9 +127,9 @@ export default function ClientPage() {
           切換到 ClientPage3
         </button>
       </Link>
-
     </>
   );
 }
+
 
 
